@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÉLAN BLOOM — Премиальная флористическая студия · A gesture in bloom</title>
+  <meta name="description" content="ÉLAN BLOOM — студия авторских букетов, редких сезонных цветов и необычных цветочных композиций в Москве. Цветы, которые остаются в памяти.">
+  <meta name="theme-color" content="#05070e">
+
+  <!-- Favicon (SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23080b18' stroke='%23ff8c6b' stroke-width='1.5'/%3E%3Cpath d='M16 8 C13 12, 11 16, 16 23 C21 16, 19 12, 16 8 Z' fill='%23c8b6ff' opacity='0.85'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- Ambient Light Fields & Film Grain Texture -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+  </div>
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       01. Header & Primary Navigation
+       ========================================================================= -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrapper">
+      <!-- Brand Logo -->
+      <a href="#top" class="brand-logo" aria-label="ÉLAN BLOOM — Главная">
+        ÉLAN BLOOM
+        <span class="dot" aria-hidden="true"></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Основная навигация">
+        <a href="#catalog" class="nav-item">Букеты</a>
+        <a href="#manifesto" class="nav-item">О студии</a>
+        <a href="#delivery" class="nav-item">Доставка</a>
+        <a href="#contacts" class="nav-item">Контакты</a>
+      </nav>
+
+      <!-- Nav Action Button -->
+      <div class="nav-actions">
+        <a href="#order-section" class="btn-pill btn-pill-primary">
+          <span class="status-dot" aria-hidden="true"></span>
+          Заказать букет
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="menu-toggle" aria-label="Открыть мобильное меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" aria-label="Мобильное меню">
+    <nav class="mobile-nav-links">
+      <a href="#catalog" class="nav-item">Букеты</a>
+      <a href="#manifesto" class="nav-item">О студии</a>
+      <a href="#bespoke" class="nav-item">Индивидуальный заказ</a>
+      <a href="#process" class="nav-item">Процесс</a>
+      <a href="#delivery" class="nav-item">Доставка</a>
+      <a href="#contacts" class="nav-item">Контакты</a>
+    </nav>
+    <a href="#order-section" class="btn-pill btn-pill-primary" style="justify-content: center; width: 100%;">
+      <span class="status-dot" aria-hidden="true"></span>
+      Заказать композицию
+    </a>
+  </div>
+
+  <main>
+    <!-- =======================================================================
+         02. Hero Section (Digital Art & Interactive 3D Centerpiece)
+         ======================================================================= -->
+    <section class="hero-section" id="hero" aria-label="Первый экран">
+      <!-- Horizon Sky Lighting -->
+      <div class="hero-sky" aria-hidden="true"></div>
+
+      <!-- Grounded Landscape with Sculptural Rock Pedestal -->
+      <div class="hero-pedestal-landscape" aria-hidden="true">
+        <img
+          src="assets/images/hero-stone-pedestal.jpg"
+          alt=""
+          class="pedestal-landscape-img"
+          fetchpriority="high"
+          loading="eager"
+        >
+      </div>
+
+      <!-- 1. Top Section: Meta bar with editorial micro-labels -->
+      <div class="container hero-top-container">
+        <div class="hero-meta-bar">
+          <div class="meta-left">
+            <span>Floral atelier · Moscow</span>
+            <div class="meta-social" aria-label="Социальные сети">
+              <a href="https://t.me" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              </a>
+              <a href="#contacts" aria-label="MAX / Контакты">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="meta-right">
+            <span>A gesture in bloom.</span>
+            <span style="opacity: 0.6;">01 / 06</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Center Stage: Large Standalone Luminous Floating Flower (Completely Unobstructed) -->
+      <div class="hero-stage" aria-label="Интерактивная инсталляция цветка">
+        <!-- Floating Sculptural Luminous Flower Hovering Weightlessly Above Pedestal -->
+        <div class="flower-object-container" id="flower-3d-container" title="Потяните для 3D наклона">
+          <canvas id="hero-particles-canvas" class="hero-particles-canvas" aria-hidden="true"></canvas>
+          <div class="flower-halo-glow" aria-hidden="true"></div>
+          <img
+            src="assets/images/flower-transparent.png"
+            alt="Светящийся фантазийный цветок ÉLAN BLOOM"
+            class="flower-cutout-img"
+            id="hero-flower-visual"
+            width="1024"
+            height="872"
+            fetchpriority="high"
+            loading="eager"
+          >
+        </div>
+      </div>
+
+      <!-- 3. Lower Section: Marketing Content Positioned BELOW the Floating Flower -->
+      <div class="container hero-marketing-container">
+        <div class="hero-marketing-editorial">
+          <div class="hero-pill-badge">
+            <span class="status-dot" style="background: #10b981; box-shadow: 0 0 8px #10b981;" aria-hidden="true"></span>
+            Принимаем заказы на сегодня
+          </div>
+          <h1 class="hero-title">
+            Цветы, которые <em>остаются</em> в памяти.
+          </h1>
+          <p class="hero-subtitle">
+            Авторские букеты и композиции для моментов, которым хочется придать форму.
+          </p>
+          <div class="hero-actions">
+            <a href="#catalog" class="btn-pill btn-pill-primary">
+              Выбрать букет
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#order-section" id="hero-bespoke-btn" class="btn-pill btn-pill-glass">
+              Создать особенный
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Very Bottom: Giant Oversized "ÉLAN BLOOM" Typography Preserved -->
+      <div class="hero-giant-typography" aria-hidden="true">
+        <span class="giant-text">ÉLAN BLOOM</span>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         03. Brand Manifesto Section
+         ======================================================================= -->
+    <section class="section-manifesto" id="manifesto" aria-label="Манифест бренда">
+      <div class="container">
+        <div class="manifesto-grid">
+          <!-- Text Content -->
+          <div class="manifesto-content reveal-on-scroll">
+            <span class="section-tag">01 // MANIFESTO</span>
+            <h2 class="manifesto-title">
+              Не просто букет.<br>Маленькая сцена для чувства.
+            </h2>
+            <p class="manifesto-text">
+              Мы собираем цветочные композиции из редких сезонных цветов — работаем с цветом, формой, ароматом и тем настроением, которое невозможно объяснить словами.
+            </p>
+            <blockquote class="manifesto-quote">
+              «Каждая композиция создаётся вручную — для одного конкретного человека и одного конкретного момента.»
+            </blockquote>
+          </div>
+
+          <!-- Editorial Macro Visual -->
+          <div class="manifesto-visual reveal-on-scroll delay-1">
+            <div class="manifesto-image-wrap">
+              <img
+                src="assets/images/macro-petals.jpg"
+                alt="Макро-съемка бархатных лепестков с капельками росы в утреннем свете"
+                loading="lazy"
+                width="640"
+                height="480"
+              >
+              <div class="manifesto-badge">
+                <strong>ATELIER PHILOSOPHY</strong>
+                <span>Редкость · Форма · Тишина</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         04. Catalog Section (Asymmetric Rhythmic Grid)
+         ======================================================================= -->
+    <section class="section-catalog" id="catalog" aria-label="Каталог букетов">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">02 // CATALOG</span>
+          <h2 class="section-title">Выбранные композиции</h2>
+          <p class="section-subtitle">
+            Шесть историй, собранных из редких цветов, света и настроения.
+          </p>
+        </div>
+
+        <div class="catalog-grid">
+          <!-- Card 1: VELVET HOUR -->
+          <article class="catalog-card card-col-1 reveal-on-scroll">
+            <div class="card-image-wrap">
+              <span class="card-index">01 / 06</span>
+              <img
+                src="assets/images/bouquet-1-velvet-hour.jpg"
+                alt="Авторский букет VELVET HOUR"
+                loading="lazy"
+                width="600"
+                height="800"
+              >
+              <span class="card-price-tag">12 900 ₽</span>
+            </div>
+            <div class="card-content">
+              <div class="card-title-row">
+                <h3 class="card-title">VELVET HOUR</h3>
+              </div>
+              <p class="card-description">
+                Глубокие винные каллы, тёмная георгина, пыльная роза и ветви амаранта в скульптурной керамической вазе.
+              </p>
+              <div class="card-actions">
+                <button
+                  class="btn-card-order"
+                  data-bouquet="velvet-hour"
+                  aria-label="Добавить букет VELVET HOUR в заказ"
+                >
+                  Добавить в заказ
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button
+                  class="btn-quick-view"
+                  data-bouquet="velvet-hour"
+                  aria-label="Подробнее о букете VELVET HOUR"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: ORBIT OF LILAC -->
+          <article class="catalog-card card-col-2 reveal-on-scroll delay-1">
+            <div class="card-image-wrap">
+              <span class="card-index">02 / 06</span>
+              <img
+                src="assets/images/bouquet-2-orbit-lilac.jpg"
+                alt="Авторский букет ORBIT OF LILAC"
+                loading="lazy"
+                width="500"
+                height="667"
+              >
+              <span class="card-price-tag">15 400 ₽</span>
+            </div>
+            <div class="card-content">
+              <div class="card-title-row">
+                <h3 class="card-title">ORBIT OF LILAC</h3>
+              </div>
+              <p class="card-description">
+                Сиреневые ирисы, анемоны, ранункулюсы и воздушные графичные ветви в авторском сосуде.
+              </p>
+              <div class="card-actions">
+                <button
+                  class="btn-card-order"
+                  data-bouquet="orbit-of-lilac"
+                  aria-label="Добавить букет ORBIT OF LILAC в заказ"
+                >
+                  Добавить в заказ
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button
+                  class="btn-quick-view"
+                  data-bouquet="orbit-of-lilac"
+                  aria-label="Подробнее о букете ORBIT OF LILAC"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: SOLAR MUSE -->
+          <article class="catalog-card card-col-3 reveal-on-scroll">
+            <div class="card-image-wrap">
+              <span class="card-index">03 / 06</span>
+              <img
+                src="assets/images/bouquet-3-solar-muse.jpg"
+                alt="Авторский букет SOLAR MUSE"
+                loading="lazy"
+                width="500"
+                height="667"
+              >
+              <span class="card-price-tag">13 800 ₽</span>
+            </div>
+            <div class="card-content">
+              <div class="card-title-row">
+                <h3 class="card-title">SOLAR MUSE</h3>
+              </div>
+              <p class="card-description">
+                Коралловые пионы, кремовые розы, оранжевые акценты и мягкое золото в бархатной ленте.
+              </p>
+              <div class="card-actions">
+                <button
+                  class="btn-card-order"
+                  data-bouquet="solar-muse"
+                  aria-label="Добавить букет SOLAR MUSE в заказ"
+                >
+                  Добавить в заказ
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button
+                  class="btn-quick-view"
+                  data-bouquet="solar-muse"
+                  aria-label="Подробнее о букете SOLAR MUSE"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: MIDNIGHT GARDEN -->
+          <article class="catalog-card card-col-4 reveal-on-scroll delay-1">
+            <div class="card-image-wrap">
+              <span class="card-index">04 / 06</span>
+              <img
+                src="assets/images/bouquet-4-midnight-garden.jpg"
+                alt="Авторский букет MIDNIGHT GARDEN"
+                loading="lazy"
+                width="600"
+                height="800"
+              >
+              <span class="card-price-tag">18 600 ₽</span>
+            </div>
+            <div class="card-content">
+              <div class="card-title-row">
+                <h3 class="card-title">MIDNIGHT GARDEN</h3>
+              </div>
+              <p class="card-description">
+                Тёмные орхидеи, фиолетовые каллы, дикие черные ягоды и графичные глянцевые листья.
+              </p>
+              <div class="card-actions">
+                <button
+                  class="btn-card-order"
+                  data-bouquet="midnight-garden"
+                  aria-label="Добавить букет MIDNIGHT GARDEN в заказ"
+                >
+                  Добавить в заказ
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button
+                  class="btn-quick-view"
+                  data-bouquet="midnight-garden"
+                  aria-label="Подробнее о букете MIDNIGHT GARDEN"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: SOFT STATIC -->
+          <article class="catalog-card card-col-5 reveal-on-scroll">
+            <div class="card-image-wrap">
+              <span class="card-index">05 / 06</span>
+              <img
+                src="assets/images/bouquet-5-soft-static.jpg"
+                alt="Авторский букет SOFT STATIC"
+                loading="lazy"
+                width="550"
+                height="733"
+              >
+              <span class="card-price-tag">11 500 ₽</span>
+            </div>
+            <div class="card-content">
+              <div class="card-title-row">
+                <h3 class="card-title">SOFT STATIC</h3>
+              </div>
+              <p class="card-description">
+                Белые анемоны, пыльно-голубые цветы, серебристая зелень и матовая прозрачная упаковка.
+              </p>
+              <div class="card-actions">
+                <button
+                  class="btn-card-order"
+                  data-bouquet="soft-static"
+                  aria-label="Добавить букет SOFT STATIC в заказ"
+                >
+                  Добавить в заказ
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button
+                  class="btn-quick-view"
+                  data-bouquet="soft-static"
+                  aria-label="Подробнее о букете SOFT STATIC"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: LUCID BLOOM -->
+          <article class="catalog-card card-col-6 reveal-on-scroll delay-1">
+            <div class="card-image-wrap">
+              <span class="card-index">06 / 06</span>
+              <img
+                src="assets/images/bouquet-6-lucid-bloom.jpg"
+                alt="Авторский букет LUCID BLOOM"
+                loading="lazy"
+                width="550"
+                height="733"
+              >
+              <span class="card-price-tag">16 200 ₽</span>
+            </div>
+            <div class="card-content">
+              <div class="card-title-row">
+                <h3 class="card-title">LUCID BLOOM</h3>
+              </div>
+              <p class="card-description">
+                Экзотические протеи, нежные лилии, лавандовые цветы и тонкие архитектурные ветви.
+              </p>
+              <div class="card-actions">
+                <button
+                  class="btn-card-order"
+                  data-bouquet="lucid-bloom"
+                  aria-label="Добавить букет LUCID BLOOM в заказ"
+                >
+                  Добавить в заказ
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button
+                  class="btn-quick-view"
+                  data-bouquet="lucid-bloom"
+                  aria-label="Подробнее о букете LUCID BLOOM"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Catalog Footer Action -->
+        <div class="catalog-footer-action reveal-on-scroll">
+          <a href="#bespoke" class="btn-pill btn-pill-glass">
+            Смотреть все композиции
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         05. Bespoke Atelier Section
+         ======================================================================= -->
+    <section class="section-bespoke" id="bespoke" aria-label="Индивидуальная композиция">
+      <div class="container">
+        <div class="bespoke-panel reveal-on-scroll">
+          <div class="bespoke-content">
+            <span class="section-tag" style="justify-content: center; margin-bottom: 1rem;">03 // BESPOKE ATELIER</span>
+            <h2 class="bespoke-title">Ваше чувство — в нашей форме.</h2>
+            <p class="bespoke-text">
+              Расскажите о человеке, поводе или настроении — мы создадим композицию, которой не существует больше нигде.
+            </p>
+
+            <div class="bespoke-features">
+              <div class="bespoke-feature-item">
+                <span class="feature-num">01</span>
+                <h3 class="feature-title">Редкие сезонные цветы</h3>
+              </div>
+              <div class="bespoke-feature-item">
+                <span class="feature-num">02</span>
+                <h3 class="feature-title">Палитра и форма под ваш запрос</h3>
+              </div>
+              <div class="bespoke-feature-item">
+                <span class="feature-num">03</span>
+                <h3 class="feature-title">Доставка в день события</h3>
+              </div>
+            </div>
+
+            <a href="#order-section" id="bespoke-cta-btn" class="btn-pill btn-pill-primary">
+              Создать индивидуальную композицию
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         06. Process Section
+         ======================================================================= -->
+    <section class="section-process" id="process" aria-label="Процесс создания">
+      <div class="container">
+        <div class="process-grid">
+          <!-- Steps List -->
+          <div class="process-steps">
+            <div class="reveal-on-scroll">
+              <span class="section-tag" style="margin-bottom: 1rem;">04 // PROCESS</span>
+              <h2 class="section-title" style="margin-bottom: 2rem;">От&nbsp;настроения до&nbsp;композиции&nbsp;— один&nbsp;шаг</h2>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="step-card reveal-on-scroll">
+              <span class="step-number">01</span>
+              <h3 class="step-title">Слушаем</h3>
+              <p class="step-description">
+                Вы рассказываете, для кого и для какого момента нужны цветы. Мы улавливаем настроение, контекст и эмоцию.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card reveal-on-scroll delay-1">
+              <span class="step-number">02</span>
+              <h3 class="step-title">Собираем историю</h3>
+              <p class="step-description">
+                Подбираем форму, палитру, сезонные цветы и детали. Каждая линия и каждый бутон продумываются как арт-объект.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card reveal-on-scroll delay-2">
+              <span class="step-number">03</span>
+              <h3 class="step-title">Передаём лично</h3>
+              <p class="step-description">
+                Бережно упаковываем и доставляем композицию в нужное время с персональной открыткой, подписанной от руки.
+              </p>
+            </div>
+          </div>
+
+          <!-- Florist Hands Photo -->
+          <div class="process-visual-wrap reveal-on-scroll delay-1">
+            <img
+              src="assets/images/florist-craft.jpg"
+              alt="Мастер-флорист за сборкой авторского букета с бархатной лентой"
+              loading="lazy"
+              width="600"
+              height="450"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         07. Delivery & Service Section
+         ======================================================================= -->
+    <section class="section-service" id="delivery" aria-label="Доставка и сервис">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">05 // SERVICE</span>
+          <h2 class="section-title">Сервис и доставка</h2>
+        </div>
+
+        <div class="service-grid">
+          <!-- Card 1 -->
+          <div class="service-card reveal-on-scroll">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect width="16" height="13" x="2" y="5" rx="2"/><path d="M16 8h4l2 3v7h-6M2 18h20M6 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM18 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
+            </div>
+            <h3 class="service-title">Доставка день в день</h3>
+            <p class="service-text">По Москве в течение 2–4 часов.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card reveal-on-scroll delay-1">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h3 class="service-title">Фото перед отправкой</h3>
+            <p class="service-text">Покажем готовую композицию до передачи курьеру.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card reveal-on-scroll delay-2">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+            </div>
+            <h3 class="service-title">Открытка от руки</h3>
+            <p class="service-text">Добавим ваше сообщение к каждому букету.</p>
+          </div>
+        </div>
+
+        <p class="service-footnote reveal-on-scroll">
+          Мы работаем с живыми сезонными цветами, поэтому каждая композиция может немного отличаться — и именно в этом её характер.
+        </p>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         08. Order & Inquiry Form (Final Emotional CTA)
+         ======================================================================= -->
+    <section class="section-order" id="order-section" aria-label="Оформление заказа">
+      <!-- Ambient Visual Background: Macro Petal Art -->
+      <div class="order-backdrop-image" aria-hidden="true">
+        <img
+          src="assets/images/cta-bloom.jpg"
+          alt="Светящиеся лепестки цветов"
+          loading="lazy"
+          width="1376"
+          height="768"
+        >
+      </div>
+      <div class="order-backdrop-overlay" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="order-split-grid reveal-on-scroll">
+          <!-- Left Column: Editorial Brand Headline over Glowing Flower -->
+          <div class="order-editorial-col">
+            <span class="order-tag">PRIVATE ORDER</span>
+            <h2 class="order-title-stacked">
+              Пусть<br>
+              этот<br>
+              момент<br>
+              расцветёт.
+            </h2>
+            <p class="order-subtitle-editorial">
+              Оставьте заявку — и мы поможем выбрать букет или создадим композицию специально для вас.
+            </p>
+          </div>
+
+          <!-- Right Column: Compact Minimalist Luxury Order Form -->
+          <div class="order-form-col">
+            <div class="order-card-compact order-card">
+              <!-- Tabs: Standard Catalog Order vs Bespoke Commission -->
+              <div class="form-tabs-compact" role="tablist" aria-label="Выбор типа заказа">
+                <button
+                  type="button"
+                  class="tab-btn-compact active"
+                  id="tab-catalog"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="form-group-catalog"
+                >
+                  Заказать букет
+                </button>
+                <button
+                  type="button"
+                  class="tab-btn-compact"
+                  id="tab-bespoke"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="form-group-bespoke"
+                >
+                  Индивидуальная композиция
+                </button>
+              </div>
+
+              <!-- Interactive Order Form with Minimalist Underline Inputs -->
+              <form class="order-form-compact" id="atelier-order-form" novalidate>
+                <!-- Row 1: Name & Phone -->
+                <div class="form-line-row">
+                  <div class="form-line-group">
+                    <label for="order-name" class="form-line-label">Имя</label>
+                    <input
+                      type="text"
+                      id="order-name"
+                      class="form-line-input"
+                      placeholder="Как к вам обращаться"
+                      required
+                      autocomplete="name"
+                    >
+                    <span class="error-text">Укажите имя</span>
+                  </div>
+
+                  <div class="form-line-group">
+                    <label for="order-phone" class="form-line-label">Телефон</label>
+                    <input
+                      type="tel"
+                      id="order-phone"
+                      class="form-line-input"
+                      placeholder="+7 999 000-00-00"
+                      required
+                      autocomplete="tel"
+                    >
+                    <span class="error-text">Укажите телефон</span>
+                  </div>
+                </div>
+
+                <!-- Row 2: Bouquet Selection (Tab 1) -->
+                <div class="form-line-group" id="form-group-catalog">
+                  <label for="order-bouquet-input" class="form-line-label">Букет</label>
+                  <input
+                    type="text"
+                    id="order-bouquet-input"
+                    class="form-line-input"
+                    placeholder="Название или ваши пожелания"
+                  >
+                  <!-- Hidden select to maintain script compatibility -->
+                  <select id="order-bouquet-select" class="form-select" style="display: none;">
+                    <option value="velvet-hour">VELVET HOUR — 12 900 ₽</option>
+                    <option value="orbit-of-lilac">ORBIT OF LILAC — 15 400 ₽</option>
+                    <option value="solar-muse">SOLAR MUSE — 13 800 ₽</option>
+                    <option value="midnight-garden">MIDNIGHT GARDEN — 18 600 ₽</option>
+                    <option value="soft-static">SOFT STATIC — 11 500 ₽</option>
+                    <option value="lucid-bloom">LUCID BLOOM — 16 200 ₽</option>
+                    <option value="not-sure">Помогите выбрать букет</option>
+                  </select>
+                </div>
+
+                <!-- Bespoke Story Field (Tab 2) -->
+                <div class="form-line-group" id="form-group-bespoke" style="display: none;">
+                  <label for="order-bespoke-story" class="form-line-label">Пожелания к композиции</label>
+                  <input
+                    type="text"
+                    id="order-bespoke-story"
+                    class="form-line-input"
+                    placeholder="Повод, эмоции, оттенки или важные воспоминания"
+                  >
+                </div>
+
+                <!-- Row 3: Delivery Date & Delivery Time -->
+                <div class="form-line-row">
+                  <div class="form-line-group">
+                    <label for="order-date" class="form-line-label">Дата доставки</label>
+                    <input
+                      type="text"
+                      id="order-date"
+                      class="form-line-input"
+                      placeholder="08.09.2026"
+                      value="08.09.2026"
+                      required
+                    >
+                    <span class="error-text">Укажите дату</span>
+                  </div>
+
+                  <div class="form-line-group">
+                    <label for="order-time" class="form-line-label">Желаемое время</label>
+                    <input
+                      type="text"
+                      id="order-time"
+                      class="form-line-input"
+                      placeholder="12 : 30"
+                      value="12 : 30"
+                    >
+                  </div>
+                </div>
+
+                <!-- Row 4: Card Wishes -->
+                <div class="form-line-group">
+                  <label for="order-notes" class="form-line-label">Пожелание к букету</label>
+                  <input
+                    type="text"
+                    id="order-notes"
+                    class="form-line-input"
+                    placeholder="Цвет, характер, открытка или другие детали"
+                  >
+                </div>
+
+                <!-- Submit Button with Coral Pill Design & Slanted Arrow -->
+                <button type="submit" class="btn-submit-coral" id="submit-order-btn">
+                  <span id="submit-btn-text">Отправить заявку</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </button>
+
+                <p class="order-compact-disclaimer">
+                  Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
+                </p>
+              </form>
+
+              <!-- Animated Success Message Card -->
+              <div class="order-success-state" role="alert" aria-live="polite" style="display: none;">
+                <div class="success-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3 class="success-title">Заявка принята</h3>
+                <p class="success-message">
+                  Спасибо<span id="success-user-name"></span>. Мы напишем вам в ближайшее время и поможем собрать идеальную композицию.
+                </p>
+                <button type="button" class="btn-pill btn-pill-glass" id="reset-order-form">
+                  Сделать ещё один заказ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       09. Quick View / Bouquet Detail Modal Dialog
+       ========================================================================= -->
+  <div class="quick-order-modal" role="dialog" aria-modal="true" aria-labelledby="modal-bouquet-title">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" aria-label="Закрыть окно">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-image-col">
+        <img id="modal-bouquet-img" src="" alt="">
+      </div>
+      <div class="modal-info-col">
+        <div>
+          <span class="section-tag" style="margin-bottom: 0.5rem;">ÉLAN BLOOM SELECTION</span>
+          <h3 class="modal-bouquet-title" id="modal-bouquet-title">VELVET HOUR</h3>
+          <div class="modal-bouquet-price" id="modal-bouquet-price">12 900 ₽</div>
+          <p class="modal-bouquet-composition" id="modal-bouquet-comp">Состав композиции</p>
+        </div>
+        <button class="btn-pill btn-pill-primary" id="modal-action-btn" style="width: 100%; justify-content: center;">
+          Оформить этот букет
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       10. Footer Section
+       ========================================================================= -->
+  <footer class="site-footer" id="contacts">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <div class="footer-logo">ÉLAN BLOOM</div>
+          <p class="footer-tagline">A gesture in bloom.</p>
+          <div class="footer-social-links">
+            <!-- Telegram SVG -->
+            <a href="https://t.me" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            </a>
+            <!-- WhatsApp / MAX SVG -->
+            <a href="https://wa.me/79992461872" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp / MAX">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+            </a>
+            <!-- Phone Call SVG -->
+            <a href="tel:+79992461872" class="social-icon-btn" aria-label="Позвонить в студию">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Навигация</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#catalog">Букеты</a></li>
+            <li><a href="#manifesto">О студии</a></li>
+            <li><a href="#delivery">Доставка</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+        </div>
+
+        <!-- Atelier Contacts -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Ателье</h4>
+          <p class="footer-contact-item">
+            <a href="tel:+79992461872">+7 (999) 246-18-72</a>
+          </p>
+          <p class="footer-contact-item">
+            Москва, Большая Никитская, 24
+          </p>
+          <p class="footer-contact-item" style="color: var(--text-muted);">
+            Ежедневно, 10:00–22:00
+          </p>
+        </div>
+
+        <!-- Atelier Services -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Услуги</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#bespoke">Индивидуальный букет</a></li>
+            <li><a href="#order-section">Срочная доставка</a></li>
+            <li><a href="#process">Оформление событий</a></li>
+            <li><a href="#contacts">Корпоративные подарки</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <span>© 2026 ÉLAN BLOOM. Цветы, которые говорят за вас.</span>
+        <span>A gesture in bloom · Haute Floral Atelier</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/three.min.js"></script>
+  <script src="scripts/hero-flower.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
