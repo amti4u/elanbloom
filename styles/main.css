@@ -360,15 +360,6 @@ ul, ol {
   box-shadow: 0 8px 30px rgba(255, 255, 255, 0.28), 0 0 15px rgba(200, 182, 255, 0.4);
 }
 
-.flower-mark {
-  display: inline-block;
-  color: var(--accent-coral);
-  font-family: var(--font-editorial);
-  font-size: 1.05rem;
-  line-height: 0.8;
-  transform: translateY(-1px);
-}
-
 .btn-pill-glass {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -570,7 +561,9 @@ ul, ol {
 .meta-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: flex-end;
+  margin-left: auto;
+  text-align: right;
 }
 
 /* 2. Center Stage: Large Standalone Luminous Floating Flower */
@@ -686,27 +679,6 @@ ul, ol {
   align-items: center;
 }
 
-.hero-pill-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.42rem 1.15rem;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.95);
-  color: #080b18;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  margin-bottom: clamp(0.45rem, 0.9vh, 0.75rem);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 255, 255, 0.25);
-  transition: transform var(--trans-fast), box-shadow var(--trans-fast);
-}
-
-.hero-pill-badge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.35);
-}
-
 .hero-title {
   font-family: var(--font-editorial);
   font-size: clamp(1.85rem, 3.4vw, 3.2rem);
@@ -820,17 +792,23 @@ ul, ol {
 .section-tag-number {
   color: var(--accent-peach);
   font-family: var(--font-editorial);
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   font-style: italic;
   font-weight: 400;
   letter-spacing: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
 .section-tag-title {
   color: var(--text-subtle);
+  display: inline-flex;
+  align-items: center;
   font-size: inherit;
   font-weight: 500;
   letter-spacing: 0.17em;
+  line-height: 1;
 }
 
 .section-tag-standalone {
@@ -2221,10 +2199,6 @@ ul, ol {
   .hero-marketing-editorial {
     max-width: none;
     width: 100%;
-  }
-
-  .hero-pill-badge {
-    margin-bottom: 0.35rem;
   }
 
   .hero-title {
