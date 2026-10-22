@@ -726,18 +726,18 @@ ul, ol {
   z-index: 5;
   pointer-events: none;
   user-select: none;
-  padding: 0 1.5rem;
-  margin-top: clamp(0.75rem, 2vh, 1.75rem);
-  margin-bottom: clamp(0.4rem, 1.2vh, 1rem);
+  padding: 0 1rem;
+  margin-top: clamp(0.5rem, 1.5vh, 1.25rem);
+  margin-bottom: 0;
   box-sizing: border-box;
   overflow: hidden;
 }
 
 .giant-text {
   font-family: var(--font-sans);
-  font-size: clamp(2rem, 7.5vw, 6.2rem);
+  font-size: clamp(6rem, min(20vw, 26vh), 22rem);
   font-weight: 300;
-  line-height: 0.9;
+  line-height: 0.82;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.72);
   text-transform: uppercase;
@@ -2184,12 +2184,12 @@ ul, ol {
   }
 
   .hero-stage {
-    height: clamp(190px, 34vh, 320px);
+    height: clamp(180px, 30vh, 280px);
   }
 
   .flower-object-container {
-    width: min(360px, 40vh, 36vw);
-    height: min(360px, 40vh, 36vw);
+    width: min(340px, 34vh, 34vw);
+    height: min(340px, 34vh, 34vw);
   }
 
   .hero-marketing-container {
@@ -2214,11 +2214,11 @@ ul, ol {
   }
 
   .hero-giant-typography {
-    margin-top: 0.35rem;
-    margin-bottom: 0.15rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0;
   }
 
   .giant-text {
-    font-size: clamp(1.75rem, 5.2vw, 4.6rem);
+    font-size: clamp(5rem, min(19vw, 24vh), 20rem);
   }
 }
